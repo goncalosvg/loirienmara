@@ -1,1 +1,1 @@
-# verteal.Web.Boilerplate
+# Verteal Web Boilerplate
