@@ -28,4 +28,4 @@ $ npm run dev
 
 ## License
 
-This projects is licensed under the MIT License.
+This project is licensed under the MIT License.
