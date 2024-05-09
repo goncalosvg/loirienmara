@@ -55,6 +55,7 @@ li {
 }
 
 a {
+  color: #525252;
   text-decoration: none;
   transition: 0.3s all;
   -webkit-transition: 0.3s all;
@@ -205,8 +206,11 @@ p {
   #home {
     .videowrap {
       height: 85%;
+      .logo {
+        width: 150px;
+      }
       .title {
-        width: 50%;
+        width: 60%;
       }
       .video {
         width: 270%;
@@ -217,8 +221,19 @@ p {
       height: 15%;
       padding: 20px 0 0 0;
       flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 1rem;
       .reserve {
         font-size: 16px;
+      }
+      .socials {
+        .social {
+          svg {
+            width: 25px;
+            height: auto;
+          }
+        }
       }
     }
   }
