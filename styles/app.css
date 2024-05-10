@@ -95,7 +95,7 @@ p {
       z-index: 3;
     }
     .title {
-      width: 350px;
+      width: 330px;
       height: auto;
       position: absolute;
       top: 50%;
@@ -205,7 +205,7 @@ p {
 @media only screen and (min-width: 1px) and (max-width: 767px) {
   #home {
     .videowrap {
-      height: 85%;
+      height: auto;
       .logo {
         width: 150px;
       }
@@ -213,8 +213,8 @@ p {
         width: 60%;
       }
       .video {
-        width: 270%;
-        transform: translate(-50%, -50%) rotate(90deg);
+        width: auto;
+        height: 100%;
       }
     }
     .footer {
@@ -246,8 +246,8 @@ p {
         width: 50%;
       }
       .video {
-        width: 270%;
-        transform: translate(-50%, -50%) rotate(90deg);
+        width: auto;
+        height: 100%;
       }
     }
     .footer {
