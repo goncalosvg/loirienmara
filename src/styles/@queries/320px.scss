@@ -12,7 +12,7 @@
             font-size: 11px;
           }
           .heading {
-            font-size: 28px;
+            font-size: 35px;
             @include utils.spacing(-0.7px);
           }
         }
@@ -55,13 +55,13 @@
       flex-direction: column;
       align-items: flex-start;
       .heading {
-        font-size: 70px;
+        font-size: 85px;
         @include utils.spacing(-5px);
       }
       .paragraph {
         width: 100%;
         p {
-          font-size: 14px;
+          font-size: 16px;
           text-align: left;
           margin-top: 1rem;
         }
@@ -70,15 +70,20 @@
     .card {
       margin-top: 3rem;
       .header {
+        height: 300px;
         .image {
           width: auto;
           height: 100%;
+        }
+        &.full {
+          height: 300px;
         }
       }
       .info {
         flex-direction: column;
         .villaheading {
           font-size: 35px;
+          @include utils.spacing(-2px);
         }
         p {
           width: 250px;
@@ -90,8 +95,8 @@
       }
     }
     .description {
-      padding: 0 2rem 5rem 2rem;
-      font-size: 2em;
+      padding: 0 1rem 5rem 1rem;
+      font-size: 3em;
       margin: 10rem 0 0 0;
       @include utils.spacing(-2.5px);
     }
@@ -126,6 +131,17 @@
           height: 50px;
           .image {
             width: 150px;
+          }
+        }
+        &:hover {
+          gap: 0.5rem;
+          .photo {
+            width: 30%;
+          }
+          span {
+            &:last-child {
+              transform: skew(0deg);
+            }
           }
         }
       }
@@ -198,7 +214,7 @@
     .title {
       margin-bottom: 4rem;
       .heading {
-        font-size: 50px;
+        font-size: 65px;
         @include utils.spacing(-4px);
       }
     }

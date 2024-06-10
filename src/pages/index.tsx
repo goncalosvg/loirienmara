@@ -205,6 +205,7 @@ export default function Home() {
                 <video
                   className="video"
                   src="https://cdn.narrativ.vtal.dev/loirienmaravideo.mp4"
+                  playsInline
                   autoPlay
                   muted
                   loop

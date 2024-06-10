@@ -117,8 +117,8 @@
 .menutrigger {
   width: fit-content;
   color: colors.$background;
-  font-family: utils.$main-font;
-  font-size: 16px;
+  font-family: utils.$main-font-bold;
+  font-size: 15px;
   position: absolute;
   top: 100px;
   left: 80px;
@@ -430,17 +430,24 @@
 
 @media only screen and (min-width: 1px) and (max-width: 767px) {
   #fixednav {
+    height: 80px;
+    display: flex;
+    align-items: center;
     .content {
       padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      transform: translateY(0px);
       .left {
+        width: 100%;
+        padding: 0 0;
         .items {
           display: none;
         }
       }
       .center {
         width: 100%;
-        display: flex;
-        justify-content: flex-end;
+        transform: translateY(3px);
         .logo {
           width: 130px;
         }
@@ -465,7 +472,9 @@
         }
       }
       .right {
-        display: none;
+        .btn {
+          display: none;
+        }
       }
     }
     &.dark {
