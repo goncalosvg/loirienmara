@@ -7,6 +7,10 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <script
+          defer
+          src="https://resnova.resrequest.com/widget/js/app.js"
+        ></script>
       </body>
     </Html>
   )

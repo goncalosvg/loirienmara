@@ -1,0 +1,496 @@
+@use "@root/colors";
+@use "@root/utils";
+
+body {
+  margin: 0 0;
+  padding: 0 0;
+  background: colors.$background;
+  outline: none;
+  font-size: clamp(16px, 1.2vw, 20px);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden !important;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+main {
+  min-height: 100vh;
+  background-color: colors.$background;
+}
+
+section {
+  position: relative;
+  z-index: 5;
+}
+
+::-moz-selection {
+  color: red;
+  background: yellow;
+}
+
+::selection {
+  color: colors.$light-green-background;
+  background: rgb(206, 218, 174, 0.8);
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: 0 !important;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-drag-over: none;
+}
+
+strong {
+  font-weight: unset !important;
+  font-style: unset !important;
+}
+
+li {
+  list-style: none;
+  display: table-cell;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s all;
+  -webkit-transition: 0.3s all;
+  -moz-transition: 0.3s all;
+  -o-transition: 0.3s all;
+}
+
+h1,
+h2,
+h3,
+p {
+  @include utils.defaultFont();
+}
+
+/* GLOBALS */
+
+.italic {
+  font-family: utils.$secondary-font !important;
+}
+
+.plax {
+  width: 100%;
+  height: 41vh;
+  background: colors.$light-heading;
+  position: relative;
+  z-index: 0;
+}
+
+.is-mobile {
+  display: none;
+}
+
+/* UTILS */
+
+.flex {
+  display: flex;
+}
+.flex-50 {
+  flex: 50%;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.block {
+  display: block;
+}
+.between {
+  justify-content: space-between;
+}
+.align-end {
+  justify-content: flex-end;
+}
+.dir-column {
+  flex-direction: column;
+}
+.v-center {
+  align-items: center;
+}
+.v-end {
+  align-items: flex-end;
+}
+.h-center {
+  justify-content: center;
+}
+.h-end {
+  justify-content: flex-end;
+}
+.bl-end {
+  margin-left: auto;
+}
+.gap-xxs {
+  gap: 0.4rem;
+}
+.gap-xs {
+  gap: 0.7rem;
+}
+.gap-sm {
+  gap: 1.2rem;
+}
+.gap-md {
+  gap: 2rem;
+}
+.gap-lg {
+  gap: 4rem;
+}
+
+.w-min-content {
+  width: min-content;
+}
+.w-md {
+  width: 500px;
+}
+.w-sm {
+  width: 350px;
+}
+.w-25 {
+  width: 25%;
+}
+.w-50 {
+  width: 50%;
+}
+.w-75 {
+  width: 75%;
+}
+.w-full {
+  width: 100%;
+}
+
+.full-h {
+  height: 100%;
+}
+
+.fit-content {
+  width: fit-content;
+}
+
+.mgtop-sm {
+  margin-top: 1rem;
+}
+.mgtop-md {
+  margin-top: 3rem;
+}
+.mgtop-lg {
+  margin-top: 5rem;
+}
+.mgtop-xl {
+  margin-top: 20rem;
+}
+.mgbottom-sm {
+  margin-bottom: 1.5rem;
+}
+.mgbottom-xs {
+  margin-bottom: 3rem;
+}
+.mgbottom-md {
+  margin-bottom: 8rem;
+}
+.mgbottom-xl {
+  margin-bottom: 12rem;
+}
+
+.h-mgbottom-xxs {
+  width: 100%;
+  height: 0.5rem;
+}
+.h-mgbottom-xs {
+  width: 100%;
+  height: 1rem;
+}
+.h-mgbottom-sm {
+  width: 100%;
+  height: 3rem;
+}
+.h-mgbottom-xl {
+  width: 100%;
+  height: 5rem;
+}
+
+.pd-xs {
+  padding: 1rem;
+}
+.pt-md {
+  padding-top: 7rem;
+}
+.pb-md {
+  padding-bottom: 15rem;
+}
+
+.mg-center {
+  margin: auto;
+}
+.mg-right {
+  margin-left: auto;
+}
+
+.relative {
+  position: relative;
+}
+
+.h-full {
+  height: 100vh;
+  max-height: 100vh;
+}
+.h-relative-full {
+  height: 100%;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.z-2 {
+  position: relative;
+  z-index: 2;
+}
+
+.unsetbtn {
+  all: unset;
+}
+.unsetlink {
+  all: unset;
+}
+
+.link {
+  position: relative;
+  color: colors.$dark-heading;
+  cursor: pointer;
+
+  &.green {
+    color: colors.$green-heading;
+
+    &::before {
+      background: colors.$green-heading;
+    }
+  }
+  &::before {
+    content: "";
+    width: 100%;
+    height: 1.5px;
+    background: colors.$dark-heading;
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    @include utils.animation(fast);
+  }
+  &:hover {
+    &::before {
+      width: 0%;
+    }
+  }
+}
+
+/* COLS */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -12px;
+  margin-left: -12px;
+
+  &.sm {
+    padding: 0 5rem;
+  }
+}
+
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-12 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.col-md-4 {
+  flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+}
+
+.col-md-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.col-md-5 {
+  flex: 0 0 41.66667%;
+  max-width: 41.66667%;
+}
+
+.col-md-6 {
+  flex: 0 50%;
+  max-width: 50%;
+}
+
+.col-md-7 {
+  flex: 0 0 58.33333%;
+  max-width: 58.33333%;
+}
+
+.col-md-8 {
+  flex: 0 0 66.66666667%;
+  width: 66.66666667%;
+}
+
+.col-md-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+/* GLOBAL ANIMATIONS */
+
+.fade-in {
+  animation: fadeIn ease 0.45s forwards;
+  -webkit-animation: fadeIn ease 0.45s forwards;
+  -moz-animation: fadeIn ease 0.45s forwards;
+  -o-animation: fadeIn ease 0.45s forwards;
+  -ms-animation: fadeIn ease 0.45s forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fadeOut ease 0.7s forwards;
+  -webkit-animation: fadeOut ease 0.7s forwards;
+  -moz-animation: fadeOut ease 0.7s forwards;
+  -o-animation: fadeOut ease 0.7s forwards;
+  -ms-animation: fadeOut ease 0.7s forwards;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

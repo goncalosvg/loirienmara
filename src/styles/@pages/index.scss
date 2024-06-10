@@ -1,0 +1,482 @@
+@use "@/styles/@root/colors";
+@use "@/styles/@root/utils";
+
+#home {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  .content {
+    width: 100%;
+    height: 100%;
+    padding: 0 0 5rem 0;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    z-index: 2;
+
+    .heading {
+      width: 100%;
+
+      .title {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .subheading {
+          color: colors.$text;
+          font-family: utils.$main-font;
+          font-size: 16px;
+          text-transform: uppercase;
+          @include utils.spacing(-0.5px);
+        }
+        .heading {
+          color: colors.$heading;
+          font-family: utils.$main-font;
+          font-size: 80px;
+          margin: 0 0;
+          @include utils.spacing(-5px);
+        }
+      }
+    }
+  }
+
+  .background {
+    width: 100%;
+    height: 100vh;
+    background-color: colors.$dark-background;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      background: rgb(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .videowrap {
+      width: 100%;
+      height: 100%;
+      .video {
+        width: 100%;
+        height: 101%;
+        object-fit: cover;
+        display: block;
+        opacity: 0;
+        filter: contrast(1.1) saturate(1.3);
+        animation: fadeUp 1s cubic-bezier(0.4, 0, 0, 1) forwards;
+        animation-delay: 0.2s;
+
+        @keyframes fadeUp {
+          to {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ABOUT */
+
+#about {
+  width: 100%;
+  padding: 10rem 0 10rem 0;
+  background-color: colors.$background;
+  background-image: url("/africa.svg");
+  background-repeat: no-repeat;
+  background-position: top left;
+
+  .title {
+    .title-wrap {
+      position: relative;
+      width: max-content;
+      z-index: 1;
+      .heading {
+        color: colors.$dark-heading;
+        font-family: utils.$main-font;
+        font-size: 150px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 0 0;
+        @include utils.spacing(-9px);
+        @include utils.lineHeight(110%);
+        @include utils.animation(fast);
+        cursor: pointer;
+
+        .arrow {
+          width: 150px;
+          height: auto;
+          opacity: 0;
+          transform: translate(10px, 15px);
+          @include utils.animation(superfast);
+        }
+        &:hover {
+          opacity: 1 !important;
+          .arrow {
+            opacity: 1;
+            transform: translate(20px, 15px);
+          }
+        }
+      }
+      &:hover {
+        h3 {
+          opacity: 0.2;
+        }
+      }
+    }
+    p {
+      width: 70%;
+      color: colors.$light-text;
+      font-family: utils.$main-font;
+      font-size: 19px;
+      margin-top: 5rem;
+      @include utils.spacing(-0.5px);
+    }
+  }
+  .photos {
+    transform: translateY(50px);
+    .photo {
+      width: 80%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+
+      &:nth-child(2) {
+        transform: translate(130px, 50px);
+      }
+      &:nth-child(3) {
+        transform: translate(50px, 120px);
+      }
+    }
+  }
+}
+
+/* SECTION DIVIDER */
+
+#shapedivider {
+  width: 100%;
+  padding: 10rem 0 5rem 0;
+  background-color: colors.$background;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* OUR VILLAS */
+
+#villas {
+  width: 100%;
+  padding: 0 0 2rem 0;
+  background-color: colors.$background;
+
+  .title {
+    width: 100%;
+    padding: 0 0 2.5rem 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid colors.$border;
+
+    .heading {
+      color: colors.$light-heading;
+      font-family: utils.$main-font;
+      font-size: 150px;
+      margin: 0 0;
+      @include utils.spacing(-9px);
+      @include utils.lineHeight(90%);
+    }
+    .paragraph {
+      width: 40%;
+
+      p {
+        color: colors.$light-heading;
+        font-family: utils.$main-font;
+        font-size: 19px;
+        margin: 0 0;
+        text-align: right;
+        @include utils.spacing(-0.5px);
+      }
+    }
+  }
+  .card {
+    margin-top: 8rem;
+    cursor: pointer;
+
+    .header {
+      width: 100%;
+      height: 550px;
+      position: relative;
+      background-color: colors.$light-heading;
+      overflow: hidden;
+      aspect-ratio: 1/1;
+
+      .image {
+        width: 100%;
+        height: auto;
+        scale: 1.3;
+      }
+      &.full {
+        height: 500px;
+        aspect-ratio: auto;
+      }
+    }
+    .info {
+      width: 100%;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 3rem;
+
+      .villaheading {
+        color: colors.$dark-heading;
+        font-family: utils.$main-font;
+        font-size: 50px;
+        margin: 0 0;
+
+        .space {
+          @include utils.spacing(-3px);
+        }
+      }
+      p {
+        width: 450px;
+        color: colors.$light-text;
+        font-family: utils.$main-font;
+        font-size: 19px;
+        margin: 1rem 0 0 0;
+        @include utils.spacing(-0.5px);
+      }
+      .goto {
+        width: 70px;
+        height: 70px;
+        background: colors.$light-heading;
+        border-radius: 50px;
+        opacity: 0;
+        @include utils.align(center);
+        @include utils.animation(superfast);
+
+        .arrow {
+          width: 30px;
+          height: auto;
+          transform: translateX(-10px);
+          @include utils.animation(fast);
+          transition-delay: 0.1;
+        }
+      }
+    }
+    &:hover {
+      .info {
+        .goto {
+          opacity: 1;
+          .arrow {
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+  }
+  .description {
+    padding: 0 4rem;
+    color: colors.$light-heading;
+    font-family: utils.$main-font;
+    font-size: 4em;
+    margin: 20rem 0 4rem 0;
+    @include utils.spacing(-5px);
+  }
+}
+
+/* GALLERY */
+
+#gallery {
+  height: 175vh;
+  background: colors.$dark-background;
+  overflow: hidden;
+
+  .wrap {
+    padding: 2vw;
+    position: relative;
+    top: -12.5vh;
+    height: 200vh;
+    display: flex;
+    gap: 2vw;
+
+    .column {
+      width: 25%;
+      min-width: 250px;
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      white-space: nowrap;
+      gap: 2vw;
+
+      .imageContainer {
+        width: 100%;
+        height: 33%;
+        position: relative;
+        overflow: hidden;
+
+        img {
+          object-fit: cover;
+        }
+      }
+      &:nth-of-type(1) {
+        top: -30%;
+      }
+      &:nth-of-type(2) {
+        top: -70%;
+      }
+      &:nth-of-type(3) {
+        top: -15%;
+      }
+    }
+  }
+}
+
+/* ACTIVITIES */
+
+#activities {
+  width: 100%;
+  padding: 10rem 0 15rem 0;
+  background: colors.$light-green-background;
+
+  .title {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 10rem;
+
+    .heading {
+      color: colors.$green-heading;
+      font-family: utils.$main-font;
+      font-size: 150px;
+      margin: 0 0;
+      @include utils.spacing(-9px);
+      @include utils.lineHeight(100%);
+    }
+    .paragraph {
+      width: 500px;
+
+      p {
+        color: colors.$green-text;
+        font-family: utils.$main-font;
+        font-size: 19px;
+        margin: 0 0 2rem 0;
+        text-align: right;
+        @include utils.spacing(-0.5px);
+      }
+    }
+  }
+  .items {
+    @include utils.defaultUl();
+
+    li {
+      width: 100%;
+      padding: 1rem 0;
+      color: colors.$green-heading;
+      font-family: utils.$main-font;
+      font-size: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border-top: 1px solid colors.$green-border;
+      text-align: center;
+      @include utils.spacing(-3px);
+      @include utils.animation(fast);
+
+      .photo {
+        width: 0px;
+        height: 120px;
+        position: relative;
+        overflow: hidden;
+        @include utils.animation(superfast);
+
+        .image {
+          width: 350px;
+          height: auto;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      span {
+        &:last-child {
+          transform: skew(0deg);
+          @include utils.animation(superfast);
+        }
+      }
+      &:last-child {
+        border-bottom: 1px solid colors.$green-border;
+      }
+      &:hover {
+        gap: 1rem;
+
+        .photo {
+          width: 300px;
+        }
+        span {
+          &:last-child {
+            transform: skew(-15deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* BOOKINGS */
+
+#bookings {
+  width: 100%;
+  padding: 10rem 0 5rem 0;
+  background: colors.$background;
+
+  .title {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+
+    .heading {
+      color: colors.$dark-heading;
+      font-family: utils.$main-font;
+      font-size: 150px;
+      margin: 0 0;
+      @include utils.spacing(-9px);
+      @include utils.lineHeight(100%);
+    }
+    .paragraph {
+      width: 40%;
+
+      p {
+        color: colors.$light-text;
+        font-family: utils.$main-font;
+        font-size: 19px;
+        margin: 0 0 2rem 0;
+        text-align: right;
+        @include utils.spacing(-0.5px);
+      }
+    }
+  }
+}

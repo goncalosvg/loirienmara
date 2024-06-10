@@ -1,0 +1,124 @@
+@font-face {
+  font-family: "Arsenica Italic";
+  src: url("@fonts/Arsenica/Arsenica-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Satoshi Bold";
+  src: url("@fonts/bold/Satoshi-Bold.woff") format("woff"),
+    url("@fonts/bold/Satoshi-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Satoshi Medium";
+  src: url("@fonts/medium/Satoshi-Medium.woff") format("woff"),
+    url("@fonts/medium/Satoshi-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Satoshi Regular";
+  src: url("@fonts/regular/Satoshi-Regular.woff") format("woff"),
+    url("@fonts/regular/Satoshi-Regular.woff2") format("woff2");
+}
+
+$main-font-bold: "Satoshi Bold", sans-serif;
+$main-font: "Satoshi Medium", sans-serif;
+$main-font-regular: "Satoshi Regular", sans-serif;
+$secondary-font: "Arsenica Italic", sans-serif;
+
+$radius-sm: 5px;
+$radius-md: 15px;
+
+@mixin defaultUl() {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+@mixin defaultFont($type: normal) {
+  font-weight: $type;
+  font-style: $type;
+}
+
+@mixin spacing($space: normal) {
+  letter-spacing: $space;
+}
+
+@mixin lineHeight($height: 100%) {
+  line-height: $height;
+}
+
+@mixin align($place) {
+  @if $place == "center" {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @if $place == "v-end" {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+@mixin textOverflow($type: ellipsis) {
+  overflow: hidden;
+  @if $type == "ellipsis" {
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+  }
+  @if $type == "wrap" {
+    text-overflow: ellipsis;
+    text-wrap: wrap;
+  }
+}
+
+@mixin scrollBar($type: default) {
+  @if $type == "default" {
+    &::-webkit-scrollbar {
+      width: 3px;
+      height: 3px;
+      border-radius: 50px;
+    }
+  }
+  @if $type == "vertical" {
+    &::-webkit-scrollbar {
+      width: 3px;
+      border-radius: 50px;
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background: #f6f6f6;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #d4d4d4;
+  }
+}
+
+@mixin animation($type) {
+  @if $type == "primary" {
+    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  @if $type == "fast" {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0, 1);
+  }
+  @if $type == "superfast" {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0, 1);
+  }
+  @if $type == "slow" {
+    transition: all 1.6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+
+@mixin fadeUp($y) {
+  animation: fadeUp 1.2s cubic-bezier(0.4, 0, 0, 1) forwards;
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateY($y);
+    }
+  }
+}

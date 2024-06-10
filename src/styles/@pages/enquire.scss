@@ -1,0 +1,37 @@
+@use "@/styles/@root/colors";
+@use "@/styles/@root/utils";
+
+#enquire {
+  width: 100%;
+  padding: 15rem 0 5rem 0;
+  background: colors.$background;
+
+  .title {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+
+    .heading {
+      color: colors.$dark-heading;
+      font-family: utils.$main-font;
+      font-size: 150px;
+      margin: 0 0;
+      @include utils.spacing(-9px);
+      @include utils.lineHeight(100%);
+    }
+    .paragraph {
+      width: 40%;
+
+      p {
+        color: colors.$light-text;
+        font-family: utils.$main-font;
+        font-size: 19px;
+        margin: 0 0 2rem 0;
+        text-align: right;
+        @include utils.spacing(-0.5px);
+      }
+    }
+  }
+}

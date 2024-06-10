@@ -1,0 +1,195 @@
+@use "@/styles/@root/colors";
+@use "@/styles/@root/utils";
+
+#conserve-hero {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  position: relative;
+  background-color: colors.$background;
+
+  .content {
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .gallery-image {
+      width: 40vmin;
+      height: auto;
+      @include utils.animation(superfast);
+
+      &:first-child {
+        opacity: 0;
+        transform: translateY(0);
+        animation: fadeUp1 1.2s cubic-bezier(0.4, 0, 0, 1) forwards;
+        animation-delay: 0.1s;
+
+        @keyframes fadeUp1 {
+          to {
+            opacity: 1;
+            transform: translateY(10px);
+          }
+        }
+      }
+      &:nth-child(2) {
+        opacity: 0;
+        transform: translateY(0);
+        animation: fadeUp2 1.2s cubic-bezier(0.4, 0, 0, 1) forwards;
+        animation-delay: 0.1s;
+
+        @keyframes fadeUp2 {
+          to {
+            opacity: 1;
+            transform: translateY(-30px);
+          }
+        }
+      }
+      &:nth-child(3) {
+        opacity: 0;
+        transform: translateY(0);
+        animation: fadeUp3 1.2s cubic-bezier(0.4, 0, 0, 1) forwards;
+        animation-delay: 0.1s;
+
+        @keyframes fadeUp3 {
+          to {
+            opacity: 1;
+            transform: translateY(-40px);
+          }
+        }
+      }
+      &:nth-child(4) {
+        opacity: 0;
+        transform: translateY(0);
+        animation: fadeUp4 1.2s cubic-bezier(0.4, 0, 0, 1) forwards;
+        animation-delay: 0.1s;
+
+        @keyframes fadeUp4 {
+          to {
+            opacity: 1;
+            transform: translateY(-60px);
+          }
+        }
+      }
+      &:nth-child(5) {
+        opacity: 0;
+        transform: translateY(0);
+        animation: fadeUp5 1.2s cubic-bezier(0.4, 0, 0, 1) forwards;
+        animation-delay: 0.1s;
+
+        @keyframes fadeUp5 {
+          to {
+            opacity: 1;
+            transform: translateY(-10px);
+          }
+        }
+      }
+    }
+  }
+  .slider-container {
+    position: absolute;
+    bottom: 30px;
+    mix-blend-mode: difference;
+    overflow: hidden;
+
+    .slider {
+      position: relative;
+      white-space: nowrap;
+      transform: translateY(100%);
+      animation: showUp 1s cubic-bezier(0.4, 0, 0, 1) forwards;
+      animation-delay: 0.2s;
+
+      @keyframes showUp {
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      p {
+        position: relative;
+        color: colors.$heading;
+        font-family: utils.$main-font;
+        font-size: 12vw;
+        margin: 0 0;
+        padding-right: 50px;
+        @include utils.spacing(-0.8vw);
+
+        &:nth-of-type(2) {
+          position: absolute;
+          top: 0;
+          left: 100%;
+        }
+        &::before {
+          content: "";
+          width: 20px;
+          height: 20px;
+          background: colors.$heading;
+          position: absolute;
+          top: 55%;
+          left: -70px;
+          transform: translateY(-55%);
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+}
+
+/* CONTENT */
+
+#conserve-content {
+  width: 100%;
+  padding: 7rem 0;
+  background-color: colors.$background;
+
+  .photo {
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .heading {
+    color: colors.$dark-heading;
+    font-family: utils.$main-font;
+    font-size: 85px;
+    margin: 0 0;
+    @include utils.spacing(-5px);
+    @include utils.lineHeight(100%);
+  }
+  .paragraph {
+    width: 600px;
+    color: colors.$light-text;
+    font-family: utils.$main-font;
+    font-size: 19px;
+    text-align: center;
+    margin-top: 5rem;
+
+    &.full {
+      width: 70%;
+      text-align: left;
+    }
+  }
+  .imagewrap {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    aspect-ratio: 9/11;
+
+    .textmock {
+      width: auto;
+      height: 100%;
+    }
+  }
+  .description {
+    padding: 0 4rem;
+    color: colors.$dark-heading;
+    font-family: utils.$main-font;
+    font-size: 70px;
+    margin: 20rem 0 0 0;
+    @include utils.spacing(-5px);
+  }
+}

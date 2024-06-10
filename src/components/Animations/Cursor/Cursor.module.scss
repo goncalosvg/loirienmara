@@ -1,0 +1,11 @@
+@use "@styles/@root/colors";
+@use "@styles/@root/utils";
+
+.cursor {
+  width: 15px;
+  height: 15px;
+  background: colors.$greyish;
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+}

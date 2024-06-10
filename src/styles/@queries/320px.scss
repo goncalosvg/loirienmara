@@ -1,0 +1,434 @@
+@use "@/styles/@root/colors";
+@use "@/styles/@root/utils";
+
+@media only screen and (min-width: 1px) and (max-width: 767px) {
+  #home {
+    .content {
+      padding: 0 0 2rem 0;
+      .heading {
+        .title {
+          width: 100%;
+          .subheading {
+            font-size: 11px;
+          }
+          .heading {
+            font-size: 28px;
+            @include utils.spacing(-0.7px);
+          }
+        }
+      }
+    }
+  }
+  /* ABOUT */
+  #about {
+    padding: 5rem 0 0 0;
+    overflow: hidden;
+    .title {
+      .title-wrap {
+        .heading {
+          font-size: 70px;
+          @include utils.spacing(-5px);
+          .arrow {
+            display: none;
+          }
+        }
+      }
+      p {
+        width: 100%;
+        font-size: 17px;
+      }
+    }
+    .photos {
+      .photo {
+        width: 100%;
+      }
+    }
+  }
+  /* DIVIDER */
+  #shapedivider {
+    display: none;
+  }
+  /* OUR VILLAS */
+  #villas {
+    padding: 8rem 0 0 0;
+    .title {
+      flex-direction: column;
+      align-items: flex-start;
+      .heading {
+        font-size: 70px;
+        @include utils.spacing(-5px);
+      }
+      .paragraph {
+        width: 100%;
+        p {
+          font-size: 14px;
+          text-align: left;
+          margin-top: 1rem;
+        }
+      }
+    }
+    .card {
+      margin-top: 3rem;
+      .header {
+        .image {
+          width: auto;
+          height: 100%;
+        }
+      }
+      .info {
+        flex-direction: column;
+        .villaheading {
+          font-size: 35px;
+        }
+        p {
+          width: 250px;
+          font-size: 15px;
+        }
+        .goto {
+          display: none;
+        }
+      }
+    }
+    .description {
+      padding: 0 2rem 5rem 2rem;
+      font-size: 2em;
+      margin: 10rem 0 0 0;
+      @include utils.spacing(-2.5px);
+    }
+  }
+  /* ACTIVITIES */
+  #activities {
+    padding: 5rem 0;
+    .title {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 3rem;
+      .heading {
+        font-size: 60px;
+        @include utils.spacing(-4px);
+      }
+      .paragraph {
+        width: 100%;
+        p {
+          font-size: 15px;
+          text-align: left;
+          margin-top: 1rem;
+        }
+      }
+    }
+    .items {
+      li {
+        padding: 0.5rem 0;
+        font-size: 30px;
+        @include utils.spacing(-1px);
+        .photo {
+          width: 30%;
+          height: 50px;
+          .image {
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+  /* BOOKINGS */
+  #bookings {
+    padding: 5rem 0;
+    .title {
+      margin-bottom: 0;
+      .heading {
+        font-size: 60px;
+        @include utils.spacing(-4px);
+      }
+    }
+  }
+  /* CONSERVE */
+  #conserve-hero {
+    overflow-x: hidden;
+
+    .content {
+      width: 150%;
+
+      .gallery-image {
+        width: 65vmin;
+      }
+    }
+
+    .slider-container {
+      .slider {
+        p {
+          font-size: 25vw;
+          @include utils.spacing(-7px);
+          &::before {
+            width: 10px;
+            height: 10px;
+            left: -40px;
+          }
+        }
+      }
+    }
+  }
+  #conserve-content {
+    .photo {
+      width: 100%;
+    }
+    .heading {
+      font-size: 55px;
+    }
+    .paragraph {
+      width: 100%;
+      font-size: 16px;
+      margin-top: 3rem;
+      margin-bottom: 5rem;
+      &.full {
+        width: 100%;
+        margin-top: 2rem;
+      }
+    }
+    .description {
+      padding: 0 2rem;
+      font-size: 2em;
+      margin: 10rem 0 0 0;
+      @include utils.spacing(-2.5px);
+    }
+  }
+  /* NURTURE */
+  #nurture-hero {
+    padding: 10rem 0 0 0;
+    .title {
+      margin-bottom: 4rem;
+      .heading {
+        font-size: 50px;
+        @include utils.spacing(-4px);
+      }
+    }
+    .image {
+      width: 40vmin;
+    }
+  }
+  #nurture-content {
+    .photo {
+      width: 100%;
+    }
+    .heading {
+      font-size: 40px;
+      @include utils.spacing(-3px);
+    }
+    .subheading {
+      font-size: 45px;
+      @include utils.spacing(-4px);
+    }
+    .paragraph {
+      width: 100%;
+      font-size: 16px;
+      margin-top: 0;
+      margin-bottom: 5rem;
+      &.full {
+        width: 100%;
+        margin-top: 2rem;
+      }
+    }
+  }
+  /* EXPLORE */
+  #explore {
+    padding: 10rem 0 5rem 0;
+    background-position: left -50%;
+    .title {
+      margin-bottom: 4rem;
+      .heading {
+        font-size: 50px;
+        @include utils.spacing(-4px);
+      }
+    }
+    .items {
+      .item {
+        .header {
+          padding: 0.5rem 0;
+          font-size: 40px;
+          flex-direction: column;
+          align-items: flex-start;
+          .flex {
+            flex-direction: row;
+          }
+          .text {
+            width: 100%;
+            font-size: 16px;
+            text-align: left;
+          }
+          .photo {
+            display: none;
+          }
+        }
+        &:hover {
+          .photowrap {
+            height: 100px;
+          }
+        }
+        .photowrap {
+          height: 100px;
+        }
+      }
+    }
+  }
+  /* OUR STORY */
+  #story-hero {
+    padding: 0 0;
+    .title {
+      width: 90%;
+      margin-top: 4rem;
+      .heading {
+        font-size: 25px;
+        @include utils.spacing(-1px);
+      }
+    }
+    .plane {
+      transform: translate(-80px, -10%) !important;
+      img {
+        transform: scale(0.4);
+        filter: saturate(0);
+      }
+      &:nth-of-type(2) {
+        filter: brightness(0.5);
+        img {
+          &:nth-of-type(1) {
+            left: 62%;
+            top: -14%;
+          }
+          &:nth-of-type(2) {
+            left: -3%;
+            top: 55%;
+          }
+          &:nth-of-type(3) {
+            left: 70%;
+            top: 56%;
+          }
+        }
+      }
+      &:nth-of-type(3) {
+        filter: brightness(0.6);
+        img {
+          &:nth-of-type(1) {
+            display: none;
+          }
+          &:nth-of-type(2) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  #ourstory-parallax {
+    .container {
+      height: auto;
+      min-height: 60vh;
+      padding: 5rem 0;
+      .text {
+        width: 90%;
+        font-size: 25px;
+        @include utils.spacing(-2px);
+      }
+    }
+  }
+  #ourstory-content {
+    .flex {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .subheading {
+      font-size: 40px;
+      @include utils.spacing(-3px);
+    }
+    .paragraph {
+      width: 90%;
+      font-size: 16px;
+    }
+    .description {
+      padding: 0 2rem;
+      font-size: 2em;
+      margin: 7rem 0 5rem 0;
+      @include utils.spacing(-2px);
+    }
+    .team {
+      padding: 5rem 0;
+      background-size: 100%;
+      .heading {
+        font-size: 75px;
+        @include utils.spacing(-5px);
+
+        .box {
+          width: 50px;
+        }
+      }
+      .member {
+        margin-bottom: 3rem;
+        .photowrap {
+          height: 250px;
+        }
+        .info {
+          h3 {
+            font-size: 25px;
+          }
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+  /* ENQUIRE */
+  #enquire {
+    padding: 8rem 0 3rem 0;
+    .title {
+      margin-bottom: 0;
+      .heading {
+        font-size: 60px;
+        @include utils.spacing(-4px);
+      }
+    }
+  }
+  /* VILLA */
+  #villa-content {
+    .title {
+      margin-bottom: 2rem;
+      .heading {
+        font-size: 55px;
+        @include utils.spacing(-6px);
+      }
+    }
+    .info {
+      width: 100%;
+
+      .description {
+        font-size: 16px;
+      }
+    }
+  }
+  #villa-gallery {
+    display: none;
+  }
+  /* GLOBALS */
+  .flex {
+    flex-direction: column;
+  }
+  .col-md-4,
+  .col-md-6 {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 100%;
+  }
+  .plax {
+    height: 70vh;
+  }
+  .mgbottom-md {
+    margin-bottom: 3rem;
+  }
+  .mgtop-xl {
+    margin-top: 7rem;
+  }
+  .gap-xs {
+    gap: 0.5rem;
+  }
+  .is-mobile {
+    display: block;
+  }
+}

@@ -1,0 +1,260 @@
+@use "@/styles/@root/colors";
+@use "@/styles/@root/utils";
+
+@media only screen and (min-width: 1440px) and (max-width: 1720px) {
+  #home {
+    .content {
+      .heading {
+        .title {
+          .subheading {
+            font-size: 14px;
+          }
+          .heading {
+            font-size: 70px;
+            @include utils.spacing(-3px);
+          }
+        }
+      }
+    }
+  }
+  /* ABOUT */
+  #about {
+    .title {
+      .title-wrap {
+        .heading {
+          font-size: 110px;
+          @include utils.spacing(-6px);
+          .arrow {
+            width: 80px;
+            transform: translate(0px, 9px);
+            &:hover {
+              .arrow {
+                transform: translate(10px, 9px);
+              }
+            }
+          }
+        }
+      }
+      p {
+        width: 100%;
+        font-size: 18px;
+      }
+    }
+    .photos {
+      .photo {
+        width: 100%;
+      }
+    }
+  }
+  /* DIVIDER */
+  #shapedivider {
+    padding: 5rem 0;
+  }
+  /* OUR VILLAS */
+  #villas {
+    .title {
+      .heading {
+        font-size: 120px;
+        @include utils.spacing(-8px);
+      }
+      .paragraph {
+        width: 40%;
+        p {
+          font-size: 17px;
+        }
+      }
+    }
+    .card {
+      .header {
+        .image {
+          width: auto;
+          height: 100%;
+        }
+      }
+      .info {
+        .villaheading {
+          font-size: 40px;
+        }
+        p {
+          width: 400px;
+          font-size: 17px;
+        }
+        .goto {
+          width: 60px;
+          height: 60px;
+          .arrow {
+            width: 25px;
+          }
+        }
+      }
+    }
+    .description {
+      font-size: 3.5em;
+      margin: 15rem 0 4rem 0;
+      @include utils.spacing(-4px);
+    }
+  }
+  /* ACTIVITIES */
+  #activities {
+    .title {
+      .heading {
+        font-size: 120px;
+        @include utils.spacing(-8px);
+      }
+      .paragraph {
+        width: 40%;
+        p {
+          font-size: 17px;
+        }
+      }
+    }
+    .items {
+      li {
+        padding: 0.5rem 0;
+        font-size: 60px;
+      }
+    }
+  }
+  /* BOOKINGS */
+  #bookings {
+    .title {
+      .heading {
+        font-size: 120px;
+        @include utils.spacing(-8px);
+      }
+    }
+  }
+  /* CONSERVE */
+  #conserve-hero {
+    overflow-x: hidden;
+  }
+  #conserve-content {
+    .photo {
+      width: 100%;
+    }
+    .heading {
+      font-size: 80px;
+    }
+  }
+  /* NURTURE */
+  #nurture-hero {
+    .title {
+      .heading {
+        font-size: 120px;
+        @include utils.spacing(-8px);
+      }
+    }
+    .image {
+      width: 30vmin;
+    }
+  }
+  #nurture-content {
+    .photo {
+      width: 100%;
+    }
+    .heading {
+      font-size: 100px;
+      @include utils.spacing(-8px);
+    }
+    .subheading {
+      font-size: 60px;
+    }
+    .paragraph {
+      font-size: 18px;
+      margin-top: 3rem;
+    }
+  }
+  /* EXPLORE */
+  #explore {
+    padding: 15rem 0 10rem 0;
+    background-position: left -30%;
+    .title {
+      .heading {
+        font-size: 120px;
+        @include utils.spacing(-8px);
+      }
+    }
+    .items {
+      .item {
+        .header {
+          font-size: 60px;
+          .text {
+            font-size: 18px;
+          }
+          .photo {
+            height: 100px;
+            .image {
+              width: 250px;
+            }
+          }
+          &:hover {
+            .photo {
+              width: 200px;
+            }
+          }
+        }
+        &:hover {
+          .photowrap {
+            height: 500px;
+          }
+        }
+      }
+    }
+  }
+  /* OUR STORY */
+  #story-hero {
+    .title {
+      .heading {
+        font-size: 35px;
+      }
+    }
+  }
+  #ourstory-parallax {
+    .container {
+      height: 60vh;
+      .text {
+        font-size: 35px;
+      }
+    }
+  }
+  #ourstory-content {
+    .description {
+      font-size: 3.5em;
+      @include utils.spacing(-4px);
+    }
+    .team {
+      .member {
+        .photowrap {
+          height: 400px;
+        }
+        .info {
+          h3 {
+            font-size: 30px;
+          }
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  /* ENQUIRE */
+  #enquire {
+    .title {
+      .heading {
+        font-size: 120px;
+      }
+    }
+  }
+  /* VILLA */
+  #villa-content {
+    .title {
+      .heading {
+        font-size: 120px;
+      }
+    }
+  }
+  #villa-gallery {
+    contain: paint;
+  }
+}
