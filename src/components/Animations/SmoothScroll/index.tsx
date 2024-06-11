@@ -27,6 +27,7 @@ export default function SmoothScroll({ children }: ISmoothScroll) {
       lenis.raf(time) // Run Lenis' requestAnimationFrame method
       requestAnimationFrame(scrollFn) // Recursively call scrollFn on each frame
     }
+
     // Start the animation frame loop
     requestAnimationFrame(scrollFn)
   }, [])
