@@ -61,6 +61,18 @@
         @include utils.spacing(-0.5px);
         @include utils.animation(fast);
 
+        .divider {
+          width: 2px;
+          height: 15px;
+          background: colors.$dark-heading;
+          opacity: 0.3;
+          transform: translateY(2px);
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .link {
         &::before {
           content: "";
           width: 0%;
@@ -76,13 +88,6 @@
           &::before {
             width: 100%;
           }
-        }
-        .divider {
-          width: 2px;
-          height: 15px;
-          background: colors.$dark-heading;
-          opacity: 0.3;
-          transform: translateY(2px);
         }
       }
     }

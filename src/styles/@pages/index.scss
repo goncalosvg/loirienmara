@@ -92,7 +92,8 @@
 
 #about {
   width: 100%;
-  padding: 10rem 0 10rem 0;
+  height: 100vh;
+  padding: 10rem 0 0 0;
   background-color: colors.$background;
   background-image: url("/africa.svg");
   background-repeat: no-repeat;
@@ -141,13 +142,13 @@
       width: 70%;
       color: colors.$light-text;
       font-family: utils.$main-font;
-      font-size: 19px;
+      font-size: 21px;
       margin-top: 5rem;
       @include utils.spacing(-0.5px);
     }
   }
   .photos {
-    transform: translateY(50px);
+    transform: translateY(0px);
     .photo {
       width: 80%;
       height: auto;
@@ -157,10 +158,10 @@
       opacity: 0;
 
       &:nth-child(2) {
-        transform: translate(130px, 50px);
+        transform: translate(130px, 20px);
       }
       &:nth-child(3) {
-        transform: translate(50px, 120px);
+        transform: translate(20px, 60px);
       }
     }
   }

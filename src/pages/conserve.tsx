@@ -1,30 +1,30 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from "react";
 
-import Image from 'next/image'
+import Image from "next/image";
 
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-import Navigation from '@/components/Navigation'
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
-import Footer from '@/components/Footer'
-import Transition from '@/components/Transition'
-import GradientReveal from '@/components/Animations/Text/Gradient'
-import TextReveal from '@/components/Animations/Text/TextReveal'
-import ScrollUp from '@/utils/scrollUp'
+import Navigation from "@/components/Navigation";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import Footer from "@/components/Footer";
+import Transition from "@/components/Transition";
+import GradientReveal from "@/components/Animations/Text/Gradient";
+import TextReveal from "@/components/Animations/Text/TextReveal";
+import ScrollUp from "@/utils/scrollUp";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Conserve() {
-  const hero = useRef(null)
+  const hero = useRef(null);
 
-  const firstText = useRef(null)
-  const secondText = useRef(null) as any
-  const slider = useRef(null)
+  const firstText = useRef(null);
+  const secondText = useRef(null) as any;
+  const slider = useRef(null);
 
-  let xPercent = 0
-  let direction = -1
+  let xPercent = 0;
+  let direction = -1;
 
   useEffect(() => {
     gsap.to(slider.current, {
@@ -35,46 +35,74 @@ export default function Conserve() {
         end: window.innerHeight,
         onUpdate: (e) => (direction = e.direction * -1),
       },
-      x: '-500px',
-    })
+      x: "-500px",
+    });
 
-    requestAnimationFrame(animate)
-  }, [direction])
+    requestAnimationFrame(animate);
+  }, [direction]);
 
   const animate = () => {
     if (firstText.current && secondText.current) {
       if (xPercent < -100) {
-        xPercent = 0
+        xPercent = 0;
       } else if (xPercent > 0) {
-        xPercent = -100
+        xPercent = -100;
       }
 
-      gsap.set(firstText.current, { xPercent })
-      gsap.set(secondText.current, { xPercent })
-      requestAnimationFrame(animate)
-      xPercent += 0.015 * direction
+      gsap.set(firstText.current, { xPercent });
+      gsap.set(secondText.current, { xPercent });
+      requestAnimationFrame(animate);
+      xPercent += 0.05 * direction;
     }
-  }
+  };
 
-  const dividerRef = useRef() as any
+  const dividerRef = useRef() as any;
 
   const transition = {
-    ease: 'easeInOut',
-  }
+    ease: "easeInOut",
+  };
 
   const { scrollYProgress: dividerScrollYProgress } = useScroll({
     target: dividerRef,
-    offset: ['start start', 'end end'],
-  })
+    offset: ["start start", "end end"],
+  });
   const dividerPathLengthValue = useTransform(
     dividerScrollYProgress,
     [1, 0],
-    [0, 1],
-  )
+    [0, 1]
+  );
+
+  const spring = {
+    stiffness: 150,
+    damping: 15,
+    mass: 0.1
+  }
+
+  const mousePosition = {
+    x: useSpring(0, spring),
+    y: useSpring(0, spring)
+  }
+  
+  const mouseMove = (e: any) => {
+    const { clientX, clientY } = e;
+    
+    const targetX = clientX - (window.innerWidth / 2 * 0.25);
+    const targetY = clientY - (window.innerWidth / 2 * 0.30);
+
+    mousePosition.x.set(targetX);
+    mousePosition.y.set(targetY);
+  }
+  
+  const { x, y } = mousePosition;
 
   useEffect(() => {
-    ScrollUp()
+    mousePosition.x.set(150);
+    mousePosition.y.set(150);
   }, [])
+
+  useEffect(() => {
+    ScrollUp();
+  }, []);
   return (
     <>
       <Transition>
@@ -147,9 +175,9 @@ export default function Conserve() {
               />
               <div className="w-full flex h-center">
                 <div className="paragraph">
-                  Nestled within the private 952-acre Partakilat Conservancy, we
-                  dedicate ourselves to preserving the breathtaking beauty and
-                  rich biodiversity of the Maasai Mara.
+                  Nestled within the private Partakilat Conservancy, we dedicate
+                  ourselves to preserving the breathtaking beauty and rich
+                  biodiversity of the Maasai Mara.
                 </div>
               </div>
             </div>
@@ -207,10 +235,7 @@ export default function Conserve() {
               <div className="row">
                 <div className="col-md-6">
                   <TextReveal
-                    paragraphs={[
-                      '<span class="italic">Conservation</span>',
-                      'efforts',
-                    ]}
+                    paragraphs={['<span class="italic">Our</span>', "efforts"]}
                     style="heading"
                   />
                   <div className="paragraph full">
@@ -240,15 +265,40 @@ export default function Conserve() {
                       width={1500}
                       height={900}
                       className="textmock"
-                      src="/helicopter-conserve.jpeg"
+                      src="/ourefforts.jpg"
                       alt="\0"
                     />
                   </div>
                 </div>
               </div>
             </div>
+            <div className="gallery" onMouseMove={mouseMove}>
+              <div className="imageContainer">
+                <Image src={`/conserve/regenerative.jpg`} alt="image" fill />
+              </div>
+              <div className="overlay"></div>
+              <div className="vignette">
+                <motion.div className="title" style={{x, y}}>
+                  <TextReveal
+                    paragraphs={[
+                      "Our",
+                      '<span class="italic">Regenerative Farm</span>',
+                    ]}
+                    style="heading"
+                  />
+                  <div className="paragraph">
+                    Experience the essence of sustainable living at our
+                    regenerative farm. Engage in harvesting fresh, organic
+                    produce and relish the authentic farm-to-table dining
+                    experience. Encounter the majestic Ankole cattle and
+                    participate in daily farming activities that honor the
+                    balance of nature.
+                  </div>
+                </motion.div>
+              </div>
+            </div>
             <GradientReveal
-              paragraph="Engage in immersive activities like rhino tracking, guided walking safaris and birding tours to experience our conservation efforts firsthand. Explore our regenerative farm and working ranch, where you can follow the journey of our produce from seed to table. Visit our local school and hospital to learn more about our educational and healthcare initiatives that aim to empower and uplift our local community."
+              paragraph="Experience our conservation efforts firsthand with rhino tracking, guided walking safaris, and birdwatching. Explore our regenerative farm, tracing produce from seed to table. Visit our school and hospital to learn about our education and healthcare initiatives that empower our community."
               align="left"
               style="description"
             />
@@ -258,5 +308,5 @@ export default function Conserve() {
         </main>
       </Transition>
     </>
-  )
+  );
 }

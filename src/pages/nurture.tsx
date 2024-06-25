@@ -1,54 +1,54 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from "react";
 
-import Image from 'next/image'
+import Image from "next/image";
 
-import Marquee from 'react-fast-marquee'
+import Marquee from "react-fast-marquee";
 
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
-import Transition from '@/components/Transition'
-import TextReveal from '@/components/Animations/Text/TextReveal'
-import Fade from '@/components/Animations/Fade'
-import ScrollUp from '@/utils/scrollUp'
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import Transition from "@/components/Transition";
+import TextReveal from "@/components/Animations/Text/TextReveal";
+import Fade from "@/components/Animations/Fade";
+import ScrollUp from "@/utils/scrollUp";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Conserve() {
-  const hero = useRef(null)
-  const fixedRef = useRef(null) as any
+  const hero = useRef(null);
+  const fixedRef = useRef(null) as any;
 
   useEffect(() => {
     const scrollTriggerOptions = {
-      trigger: '.fixed',
-      start: '40% top',
-      end: 'bottom bottom',
+      trigger: ".fixed",
+      start: "40% top",
+      end: "bottom bottom",
       scrub: true,
-    }
+    };
     const scrollTriggerOptions2 = {
-      trigger: '.fixed',
-      start: '70% top',
-      end: 'bottom bottom',
+      trigger: ".fixed",
+      start: "70% top",
+      end: "bottom bottom",
       scrub: true,
-    }
-    gsap.to('.second-mock', {
+    };
+    gsap.to(".second-mock", {
       opacity: 1,
       scrollTrigger: scrollTriggerOptions,
-      ease: 'steps(1)',
-    })
-    gsap.to('.third-mock', {
+      ease: "steps(1)",
+    });
+    gsap.to(".third-mock", {
       opacity: 1,
       scrollTrigger: scrollTriggerOptions2,
-      ease: 'steps(1)',
-    })
-  }, [])
+      ease: "steps(1)",
+    });
+  }, []);
 
   useEffect(() => {
-    ScrollUp()
-  }, [])
+    ScrollUp();
+  }, []);
   return (
     <>
       <Transition>
@@ -59,8 +59,8 @@ export default function Conserve() {
               <div className="title">
                 <TextReveal
                   paragraphs={[
-                    'Nurture',
-                    '<span class="italic">for wellness</span>',
+                    "Nurture",
+                    '<span class="italic">your senses</span>',
                   ]}
                   style="heading"
                 />
@@ -72,7 +72,6 @@ export default function Conserve() {
                   width={900}
                   height={1200}
                   className="image"
-                  style={{ transform: 'scale(0.97)' }}
                   src="/marquee/1.jpg"
                   alt="\0"
                   priority
@@ -113,10 +112,19 @@ export default function Conserve() {
                   width={900}
                   height={1200}
                   className="image"
-                  src="/marquee/3.jpg"
+                  src="/marquee/6.jpg"
                   alt="\0"
                   priority
                 />
+                <Image
+                  width={900}
+                  height={1200}
+                  className="image"
+                  src="/marquee/7.jpg"
+                  alt="\0"
+                  priority
+                />
+
               </Marquee>
             </Fade>
           </section>
@@ -125,13 +133,13 @@ export default function Conserve() {
               <div className="wrapper">
                 <div className="flex h-center">
                   <div className="paragraph">
-                    Step into a sanctuary where Africa&apos;s vibrant essence
-                    nurtures your mind, body, and spirit. At LOIRIEN Mara, every
-                    moment is an invitation to rejuvenate, explore, and savor
-                    the rhythms of nature. Our exceptionally personalized and
-                    caring approach ensures that kind thoughts and attention to
-                    detail are sprinkled through every stay, creating an
-                    experience of profound renewal and harmony.
+                    At LOIRIEN Mara, we are masters in the art of well-being. We
+                    create spaces that nurture mind and body, inspired by the
+                    unique influences of the Mara. Indulge in spa treatments
+                    that rejuvenate you. Delight in farm-to-table culinary
+                    experiences, celebrating fresh ingredients from our
+                    regenerative farm. Enjoy personalized meal plans crafted by
+                    our star chef to cater to every need and desire.
                   </div>
                 </div>
                 <div className="w-full flex h-center mgbottom-md">
@@ -146,7 +154,7 @@ export default function Conserve() {
                 <TextReveal
                   paragraphs={[
                     '<span class="italic">Slow down</span>, our',
-                    'clocks are on Mara time',
+                    "clocks are on Mara time",
                   ]}
                   style="heading"
                 />
@@ -154,50 +162,35 @@ export default function Conserve() {
                   <div className="col-md-6">
                     <TextReveal
                       paragraphs={[
-                        'Our',
-                        '<span class="italic">Regenerative form</span>',
+                        '<span class="italic">Holistic</span>',
+                        "Wellness",
                       ]}
                       style="subheading"
                     />
                     <div className="paragraph full">
-                      Experience the essence of sustainable living at our
-                      regenerative farm. Engage in harvesting fresh, organic
-                      produce and relish the authentic farm-to-table dining
-                      experience. Encounter the majestic Ankole cattle and
-                      participate in daily farming activities that honor the
-                      balance of nature.
+                      In the Mara&apos;s energetic heart, harmonize your mind,
+                      body, and spirit. Indulge in treatments from our signature
+                      spa menu that soothe and rejuvenate. Unwind in our sauna
+                      and steam room, or enjoy in-room treatments and other
+                      wellness amenities. Each practice integrates ancient
+                      wisdom with modern wellness techniques.
                     </div>
                     <TextReveal
                       paragraphs={[
                         '<span class="italic">Farm-to-Table</span>',
-                        'Culinary Journies',
+                        "Culinary Journies",
                       ]}
                       style="subheading"
                     />
                     <div className="paragraph full">
                       Savor the finest farm-to-table cuisine with produce
                       harvested fresh from our regenerative farm, crafted into
-                      gourmet dishes by our master chef. Personalized meal plans
+                      gourmet dishes by our star chef. Personalized meal plans
                       cater to all dietary preferences, from gluten-free to
                       gourmet indulgences. Enjoy cooking classes that turn
                       farm-harvested ingredients into culinary masterpieces.
-                      Each meal celebrates nature&apos;s bounty, nourishing body
-                      and soul
-                    </div>
-                    <TextReveal
-                      paragraphs={[
-                        '<span class="italic">Holistic</span>',
-                        'Wellness',
-                      ]}
-                      style="subheading"
-                    />
-                    <div className="paragraph full">
-                      In the Mara&apos;s energetic heart, harmonize your mind,
-                      body, and spirit. Engage in bespoke yoga and Pilates
-                      sessions with expert instructors, rejuvenate in our sauna
-                      and steam room, and find tranquility with sound therapy
-                      and guided meditation. Each practice integrates ancient
-                      wisdom with modern wellness techniques
+                      Each meal celebrates nature's bounty, nourishing body and
+                      soul.
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -236,5 +229,5 @@ export default function Conserve() {
         </main>
       </Transition>
     </>
-  )
+  );
 }

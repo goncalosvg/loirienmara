@@ -20,7 +20,10 @@ export default function Enquire() {
           <section id="enquire" ref={hero}>
             <div className="wrapper">
               <div className="title">
-                <TextReveal paragraphs={['Enquire']} style="heading" />
+                <TextReveal
+                  paragraphs={['<span class="italic">Enquire</span>']}
+                  style="heading"
+                />
               </div>
               <rr-resnova
                 widget-id="9bedce47-df65-43b1-b73d-3240436b35f8"

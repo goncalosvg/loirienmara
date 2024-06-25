@@ -261,13 +261,11 @@ export default function Home() {
                     </div>
                     <p>
                       Welcome to LOIRIEN Mara, a sanctuary nestled within the
-                      private 952-acre Partakilat Conservancy in the heart of
-                      the Maasai Mara.
-                      <br />
-                      <br /> With a deep commitment to conservation, we offer an
+                      private Partakilat Conservancy in the heart of the Maasai
+                      Mara. With a deep commitment to conservation, we offer an
                       unparalleled retreat that connects you intimately with the
-                      land&apos;s endless beauty and culture while providing an
-                      oasis for rejuvenation and inspiration.
+                      land&apos;s beauty and culture while providing an oasis
+                      for rejuvenation and inspiration.
                     </p>
                   </div>
                 </div>
@@ -358,10 +356,10 @@ export default function Home() {
                 />
                 <div className="paragraph">
                   <p>
-                    Experience unparalleled privacy and comfort in our exquisite
-                    villas, each offering sweeping panoramic views and seamless
-                    indoor-outdoor living spaces, thoughtfully designed to
-                    harmonize with the landscapes that inspired them
+                    Experience unparalleled privacy and comfort in our villas,
+                    each offering sweeping panoramic views and seamless
+                    indooroutdoor living spaces, thoughtfully designed to
+                    harmonize with the landscapes that inspired them.
                   </p>
                 </div>
               </div>
@@ -444,7 +442,7 @@ export default function Home() {
                           height={1200}
                           className="image"
                           style={{ y: secondImageY }}
-                          src="/naika-villa.png"
+                          src="/naika/exterior1.jpg"
                           alt="Naika villa house-front photo"
                         />
                       </div>
@@ -472,7 +470,7 @@ export default function Home() {
               </div>
             </div>
             <GradientReveal
-              paragraph="Enjoy front-row seats to nature's grandest spectacle, the Great Migration, from the comfort of your home-away-from-home. Our dedicated team and private chef ensure every detail is taken care of, allowing you to explore the wild landscapes of the Mara and create unforgettable memories in absolute privacy."
+              paragraph="Enjoy front-row seats to nature's grandest spectacle, the Great Migration, from the comfort of your home-away-from-home. Our dedicated team and star chef ensure every detail is taken care of, allowing you to explore the wild landscapes of the Mara and create unforgettable memories in absolute privacy."
               align="left"
               style="description"
             />
@@ -499,16 +497,16 @@ export default function Home() {
               <div className="title">
                 <TextReveal
                   paragraphs={[
-                    '<span class="italic">Unforgettable</span>',
-                    'activities',
+                    '<span class="italic">Curated</span>',
+                    'experiences',
                   ]}
                   style="heading"
                 />
                 <div className="paragraph">
                   <p>
-                    Guests can indulge in expertly crafted cocktails made by a
-                    barman, or opt for a wine tasting curated by the sommelier,
-                    perfectly paired with delightful meals prepared by the chef.
+                    Explore. Taste. Learn. Play. — Dive into adventures that
+                    awaken your senses, embracing the raw beauty and vibrant
+                    spirit of the Maasai Mara.
                     <br />
                     <br />
                     <span className="flex h-end">
@@ -529,6 +527,7 @@ export default function Home() {
                       width={800}
                       height={500}
                       className="image"
+                      style={{ transform: 'translate(-50%, -60%) ' }}
                       src="/gallery/animal.jpg"
                       alt="\0"
                     />
@@ -542,7 +541,7 @@ export default function Home() {
                       width={800}
                       height={500}
                       className="image"
-                      src="/gallery/walkingsafari.jpg"
+                      src="/activities/walkingsafari.jpg"
                       alt="\0"
                     />
                   </div>
@@ -555,7 +554,7 @@ export default function Home() {
                       width={800}
                       height={500}
                       className="image"
-                      src="/gallery/rhinotrekking.jpg"
+                      src="/activities/rhinotrekking.jpg"
                       alt="\0"
                     />
                   </div>
@@ -568,8 +567,8 @@ export default function Home() {
                       width={800}
                       height={500}
                       className="image"
-                      style={{ transform: 'translate(-50%, -35%) ' }}
-                      src="/gallery/balloon.jpg"
+                      style={{ transform: 'translate(-50%, -45%) ' }}
+                      src="/activities/balloonbig.jpg"
                       alt="\0"
                     />
                   </div>
@@ -582,7 +581,7 @@ export default function Home() {
                       width={800}
                       height={500}
                       className="image"
-                      style={{ transform: 'translate(-50%, -70%) ' }}
+                      style={{ transform: 'translate(-50%, -60%)' }}
                       src="/gallery/helicopter.jpg"
                       alt="\0"
                     />
@@ -596,7 +595,7 @@ export default function Home() {
                       width={800}
                       height={500}
                       className="image"
-                      src="/gallery/kulaalfood.jpg"
+                      src="/gallery/culturalimmersion.jpg"
                       alt="\0"
                     />
                   </div>
@@ -635,7 +634,7 @@ export default function Home() {
                       width={800}
                       height={500}
                       className="image"
-                      src="/gallery/farm.jpg"
+                      src="/activities/farmvisits.jpg"
                       alt="\0"
                     />
                   </div>
@@ -660,7 +659,10 @@ export default function Home() {
           <section id="bookings">
             <div className="wrapper">
               <div className="title">
-                <TextReveal paragraphs={['Enquire']} style="heading" />
+                <TextReveal
+                  paragraphs={['<span class="italic">Enquire</span>']}
+                  style="heading"
+                />
               </div>
               <rr-resnova
                 widget-id="9bedce47-df65-43b1-b73d-3240436b35f8"
@@ -680,7 +682,7 @@ const images = [
   'gallery/animal.jpg',
   'gallery/balloon.jpg',
   'gallery/bonfire.jpg',
-  'gallery/engagement.jpg',
+  'gallery/zebras.jpg',
   'gallery/farm.jpg',
   'gallery/helicopter.jpg',
   'gallery/kulaalfood.jpg',

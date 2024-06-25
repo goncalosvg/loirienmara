@@ -351,7 +351,7 @@ export default function Loirien() {
                     width={1200}
                     height={1500}
                     className="photo"
-                    src="/loirien/gallery/interior1.jpg"
+                    src="/loirien/chef.jpg"
                     alt="\0"
                   />
                 </div>

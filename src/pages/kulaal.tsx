@@ -350,7 +350,7 @@ export default function Kulaal() {
                     width={1200}
                     height={1500}
                     className="photo"
-                    src="/kulaal/gallery/interior1.jpg"
+                    src="/kulaal/interior2.jpg"
                     alt="\0"
                   />
                 </div>

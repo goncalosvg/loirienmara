@@ -140,7 +140,6 @@ export default function Explore() {
                   <div className="header">
                     <div className="flex v-center gap-xs">
                       <div className="photo">
-                        0
                         <Image
                           width={800}
                           height={500}
@@ -175,8 +174,8 @@ export default function Explore() {
                           width={800}
                           height={500}
                           className="image"
-                          style={{ transform: 'translate(-50%, -35%) ' }}
-                          src="/gallery/balloon.jpg"
+                          style={{ transform: 'translate(-40%, -50%) ' }}
+                          src="/activities/balloonbig.jpg"
                           alt="\0"
                         />
                       </div>
@@ -235,7 +234,7 @@ export default function Explore() {
                           width={800}
                           height={500}
                           className="image"
-                          src="/gallery/kulaalfood.jpg"
+                          src="/gallery/culturalimmersion.jpg"
                           alt="\0"
                         />
                       </div>
@@ -251,7 +250,7 @@ export default function Explore() {
                       width={1920}
                       height={1080}
                       className="photo"
-                      src="/activities/kulaalfoodbig.jpg"
+                      src="/gallery/culturalimmersion.jpg"
                       alt="\0"
                     />
                   </div>
@@ -323,7 +322,7 @@ export default function Explore() {
                           width={800}
                           height={500}
                           className="image"
-                          src="/gallery/farm.jpg"
+                          src="/activities/farmvisits.jpg"
                           alt="\0"
                         />
                       </div>
@@ -338,7 +337,7 @@ export default function Explore() {
                       width={1920}
                       height={1080}
                       className="photo"
-                      src="/activities/farmbig.jpg"
+                      src="/activities/farmvisits.jpg"
                       alt="\0"
                     />
                   </div>
@@ -372,6 +371,9 @@ export default function Explore() {
                     />
                   </div>
                 </div>
+              </div>
+              <div className="title right">
+                <TextReveal paragraphs={['And <span class="italic">more</span>...']} style="heading" />
               </div>
             </div>
           </section>
