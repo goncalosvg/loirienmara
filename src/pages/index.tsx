@@ -2,176 +2,176 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from "react";
 
-import Image from 'next/image'
+import Image from "next/image";
 
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
-import Navigation from '@/components/Navigation'
-import Arrow from '@/components/Icons/Arrow'
-import Footer from '@/components/Footer'
-import TextReveal from '@/components/Animations/Text/TextReveal'
-import GradientReveal from '@/components/Animations/Text/Gradient'
-import Link from 'next/link'
-import Transition from '@/components/Transition'
-import ScrollUp from '@/utils/scrollUp'
+import Navigation from "@/components/Navigation";
+import Arrow from "@/components/Icons/Arrow";
+import Footer from "@/components/Footer";
+import TextReveal from "@/components/Animations/Text/TextReveal";
+import GradientReveal from "@/components/Animations/Text/Gradient";
+import Link from "next/link";
+import Transition from "@/components/Transition";
+import ScrollUp from "@/utils/scrollUp";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const container = useRef(null)
+  const container = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ['start start', 'end start'],
-  })
+    offset: ["start start", "end start"],
+  });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['0vh', '250vh'])
-  const yTitle = useTransform(scrollYProgress, [0, 1], ['0vh', '-35vh'])
+  const y = useTransform(scrollYProgress, [0, 1], ["0vh", "250vh"]);
+  const yTitle = useTransform(scrollYProgress, [0, 1], ["0vh", "-35vh"]);
 
   const handleMouseEnter = (title: any) => {
-    const firstPhoto = document.querySelector('.first-photo') as HTMLElement
-    const secondPhoto = document.querySelector('.second-photo') as HTMLElement
-    const thirdPhoto = document.querySelector('.third-photo') as HTMLElement
-    if (title === 'conserve') {
-      firstPhoto.style.opacity = '1'
-      secondPhoto.style.opacity = '0'
-      thirdPhoto.style.opacity = '0'
-    } else if (title === 'nurture') {
-      secondPhoto.style.opacity = '1'
-      firstPhoto.style.opacity = '0'
-      thirdPhoto.style.opacity = '0'
-    } else if (title === 'explore') {
-      thirdPhoto.style.opacity = '1'
-      secondPhoto.style.opacity = '0'
-      firstPhoto.style.opacity = '0'
+    const firstPhoto = document.querySelector(".first-photo") as HTMLElement;
+    const secondPhoto = document.querySelector(".second-photo") as HTMLElement;
+    const thirdPhoto = document.querySelector(".third-photo") as HTMLElement;
+    if (title === "conserve") {
+      firstPhoto.style.opacity = "1";
+      secondPhoto.style.opacity = "0";
+      thirdPhoto.style.opacity = "0";
+    } else if (title === "nurture") {
+      secondPhoto.style.opacity = "1";
+      firstPhoto.style.opacity = "0";
+      thirdPhoto.style.opacity = "0";
+    } else if (title === "explore") {
+      thirdPhoto.style.opacity = "1";
+      secondPhoto.style.opacity = "0";
+      firstPhoto.style.opacity = "0";
     }
-  }
+  };
 
-  const dividerRef = useRef() as any
+  const dividerRef = useRef() as any;
 
   const transition = {
-    ease: 'easeInOut',
-  }
+    ease: "easeInOut",
+  };
 
   const { scrollYProgress: dividerScrollYProgress } = useScroll({
     target: dividerRef,
-    offset: ['start start', 'end end'],
-  })
+    offset: ["start start", "end end"],
+  });
   const dividerPathLengthValue = useTransform(
     dividerScrollYProgress,
     [1, 0],
-    [0, 1],
-  )
+    [0, 1]
+  );
 
-  const firstHeader = useRef(null)
+  const firstHeader = useRef(null);
 
   const { scrollYProgress: imageParallaxScrollProgress } = useScroll({
     target: firstHeader,
-    offset: ['start end', 'end start'],
-  })
+    offset: ["start end", "end start"],
+  });
   const imageY = useTransform(
     imageParallaxScrollProgress,
     [0, 1],
-    ['10%', '-10%'],
-  )
+    ["10%", "-10%"]
+  );
 
-  const secondHeader = useRef(null)
+  const secondHeader = useRef(null);
 
   const { scrollYProgress: secondImageParallaxScrollProgress } = useScroll({
     target: secondHeader,
-    offset: ['start end', 'end start'],
-  })
+    offset: ["start end", "end start"],
+  });
   const secondImageY = useTransform(
     secondImageParallaxScrollProgress,
     [0, 1],
-    ['10%', '-10%'],
-  )
+    ["10%", "-10%"]
+  );
 
-  const gallery = useRef() as any
-  const [dimension, setDimension] = useState({ width: 0, height: 0 })
+  const gallery = useRef() as any;
+  const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
   const { scrollYProgress: GalleryParallax } = useScroll({
     target: gallery,
-    offset: ['start end', 'end start'],
-  })
+    offset: ["start end", "end start"],
+  });
 
-  const { height } = dimension
+  const { height } = dimension;
 
-  const galleryY = useTransform(GalleryParallax, [0, 1], [0, height * 1.8])
-  const galleryY2 = useTransform(GalleryParallax, [0, 1], [0, height * 3.3])
-  const galleryY3 = useTransform(GalleryParallax, [0, 1], [0, height * 1])
-  const galleryY4 = useTransform(GalleryParallax, [0, 1], [0, height * 0.1])
+  const galleryY = useTransform(GalleryParallax, [0, 1], [0, height * 1.8]);
+  const galleryY2 = useTransform(GalleryParallax, [0, 1], [0, height * 3.3]);
+  const galleryY3 = useTransform(GalleryParallax, [0, 1], [0, height * 1]);
+  const galleryY4 = useTransform(GalleryParallax, [0, 1], [0, height * 0.1]);
 
   useEffect(() => {
     const resize = () => {
-      setDimension({ width: window.innerWidth, height: window.innerHeight })
-    }
+      setDimension({ width: window.innerWidth, height: window.innerHeight });
+    };
 
-    resize()
+    resize();
 
-    window.addEventListener('resize', resize)
+    window.addEventListener("resize", resize);
     return () => {
-      window.removeEventListener('resize', resize)
-    }
-  }, [])
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
 
-  const [lastIndex, setLastIndex] = useState<string | null>(null)
+  const [lastIndex, setLastIndex] = useState<string | null>(null);
 
   useEffect(() => {
     const activities =
-      document.querySelectorAll<HTMLLIElement>('.activities li')
-    const images = document.querySelectorAll<HTMLDivElement>('.imagewrap')
+      document.querySelectorAll<HTMLLIElement>(".activities li");
+    const images = document.querySelectorAll<HTMLDivElement>(".imagewrap");
 
     activities.forEach((activity) => {
       const handleMouseOver = () => {
-        const index = activity.getAttribute('data-index')
+        const index = activity.getAttribute("data-index");
         if (index) {
-          setLastIndex(index)
+          setLastIndex(index);
           images.forEach((image) => {
-            if (image.getAttribute('data-index') === index) {
-              image.style.display = 'block'
+            if (image.getAttribute("data-index") === index) {
+              image.style.display = "block";
             } else {
-              image.style.display = 'none'
+              image.style.display = "none";
             }
-          })
+          });
         }
-      }
+      };
 
       const handleMouseOut = () => {
         images.forEach((image) => {
-          image.style.display = 'none'
-        })
+          image.style.display = "none";
+        });
         if (lastIndex) {
           const lastImage = document.querySelector<HTMLDivElement>(
-            `.imagewrap[data-index="${lastIndex}"]`,
-          )
+            `.imagewrap[data-index="${lastIndex}"]`
+          );
           if (lastImage) {
-            lastImage.style.display = 'block'
+            lastImage.style.display = "block";
           }
         }
-      }
+      };
 
-      activity.addEventListener('mouseover', handleMouseOver)
-      activity.addEventListener('mouseout', handleMouseOut)
+      activity.addEventListener("mouseover", handleMouseOver);
+      activity.addEventListener("mouseout", handleMouseOut);
 
       // Clean up event listeners
       return () => {
-        activity.removeEventListener('mouseover', handleMouseOver)
-        activity.removeEventListener('mouseout', handleMouseOut)
-      }
-    })
-  }, [lastIndex])
+        activity.removeEventListener("mouseover", handleMouseOver);
+        activity.removeEventListener("mouseout", handleMouseOut);
+      };
+    });
+  }, [lastIndex]);
 
-  const heroRef = useRef(null) as any
+  const heroRef = useRef(null) as any;
 
   useEffect(() => {
-    ScrollUp()
-  }, [])
+    ScrollUp();
+  }, []);
 
   return (
     <>
@@ -184,13 +184,13 @@ export default function Home() {
                 <div className="heading">
                   <motion.div style={{ y: yTitle }} className="title">
                     <TextReveal
-                      paragraphs={['Discover the essence of the Mara']}
+                      paragraphs={["Discover the essence of the Mara"]}
                       style="subheading"
                     />
                     <TextReveal
                       paragraphs={[
                         'A <span class="italic">private sanctuary</span>',
-                        'dedicated to conservation',
+                        "dedicated to conservation",
                         'and bespoke <span class="italic">experiences</span>',
                       ]}
                       style="heading"
@@ -222,10 +222,10 @@ export default function Home() {
                       <Link href="/conserve" passHref scroll={false}>
                         <h3
                           className="heading"
-                          onMouseEnter={() => handleMouseEnter('conserve')}
+                          onMouseEnter={() => handleMouseEnter("conserve")}
                         >
                           <TextReveal
-                            paragraphs={['Conserve']}
+                            paragraphs={["Conserve"]}
                             style="heading"
                             delay={0}
                           />
@@ -235,7 +235,7 @@ export default function Home() {
                       <Link href="/nurture" passHref scroll={false}>
                         <h3
                           className="heading italic"
-                          onMouseEnter={() => handleMouseEnter('nurture')}
+                          onMouseEnter={() => handleMouseEnter("nurture")}
                         >
                           <TextReveal
                             paragraphs={['<span class="italic">Nurture</span>']}
@@ -248,10 +248,10 @@ export default function Home() {
                       <Link href="/explore" passHref scroll={false}>
                         <h3
                           className="heading"
-                          onMouseEnter={() => handleMouseEnter('explore')}
+                          onMouseEnter={() => handleMouseEnter("explore")}
                         >
                           <TextReveal
-                            paragraphs={['Explore']}
+                            paragraphs={["Explore"]}
                             style="heading"
                             delay={0.2}
                           />
@@ -498,7 +498,7 @@ export default function Home() {
                 <TextReveal
                   paragraphs={[
                     '<span class="italic">Curated</span>',
-                    'experiences',
+                    "experiences",
                   ]}
                   style="heading"
                 />
@@ -527,7 +527,7 @@ export default function Home() {
                       width={800}
                       height={500}
                       className="image"
-                      style={{ transform: 'translate(-50%, -60%) ' }}
+                      style={{ transform: "translate(-50%, -60%) " }}
                       src="/gallery/animal.jpg"
                       alt="\0"
                     />
@@ -567,7 +567,7 @@ export default function Home() {
                       width={800}
                       height={500}
                       className="image"
-                      style={{ transform: 'translate(-50%, -45%) ' }}
+                      style={{ transform: "translate(-50%, -45%) " }}
                       src="/activities/balloonbig.jpg"
                       alt="\0"
                     />
@@ -581,7 +581,7 @@ export default function Home() {
                       width={800}
                       height={500}
                       className="image"
-                      style={{ transform: 'translate(-50%, -60%)' }}
+                      style={{ transform: "translate(-50%, -60%)" }}
                       src="/gallery/helicopter.jpg"
                       alt="\0"
                     />
@@ -675,23 +675,23 @@ export default function Home() {
         </main>
       </Transition>
     </>
-  )
+  );
 }
 
 const images = [
-  'gallery/animal.jpg',
-  'gallery/balloon.jpg',
-  'gallery/bonfire.jpg',
-  'gallery/zebras.jpg',
-  'gallery/farm.jpg',
-  'gallery/helicopter.jpg',
-  'gallery/kulaalfood.jpg',
-  'gallery/naika.jpg',
-  'gallery/massage.jpg',
-  'gallery/nyama.jpg',
-  'gallery/picnic.jpg',
-  'gallery/pool.jpg',
-]
+  "gallery/animal.jpg",
+  "gallery/balloon.jpg",
+  "gallery/bonfire.jpg",
+  "gallery/zebras.jpg",
+  "gallery/farm.jpg",
+  "gallery/helicopter.jpg",
+  "gallery/kulaalfood.jpg",
+  "gallery/naika.jpg",
+  "gallery/massage.jpg",
+  "gallery/nyama.jpg",
+  "gallery/picnic.jpg",
+  "gallery/pool.jpg",
+];
 
 const Column = ({ images, y }: any) => {
   return (
@@ -701,8 +701,8 @@ const Column = ({ images, y }: any) => {
           <div key={i} className="imageContainer">
             <Image src={`/${src}`} sizes="100%" quality={60} alt="\0" fill />
           </div>
-        )
+        );
       })}
     </motion.div>
-  )
-}
+  );
+};

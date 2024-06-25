@@ -1,65 +1,65 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from "react";
 
-import Image from 'next/image'
+import Image from "next/image";
 
-import Transition from '@/components/Transition'
-import Footer from '@/components/Footer'
-import Navigation from '@/components/Navigation'
-import TextReveal from '@/components/Animations/Text/TextReveal'
-import ScrollUp from '@/utils/scrollUp'
+import Transition from "@/components/Transition";
+import Footer from "@/components/Footer";
+import Navigation from "@/components/Navigation";
+import TextReveal from "@/components/Animations/Text/TextReveal";
+import ScrollUp from "@/utils/scrollUp";
 
 export default function Explore() {
-  const hero = useRef(null)
-  const [lastIndex, setLastIndex] = useState<string | null>(null)
+  const hero = useRef(null);
+  const [lastIndex, setLastIndex] = useState<string | null>(null);
 
   useEffect(() => {
     const activities =
-      document.querySelectorAll<HTMLLIElement>('.activities li')
-    const images = document.querySelectorAll<HTMLDivElement>('.imagewrap')
+      document.querySelectorAll<HTMLLIElement>(".activities li");
+    const images = document.querySelectorAll<HTMLDivElement>(".imagewrap");
 
     activities.forEach((activity) => {
       const handleMouseOver = () => {
-        const index = activity.getAttribute('data-index')
+        const index = activity.getAttribute("data-index");
         if (index) {
-          setLastIndex(index)
+          setLastIndex(index);
           images.forEach((image) => {
-            if (image.getAttribute('data-index') === index) {
-              image.style.display = 'block'
+            if (image.getAttribute("data-index") === index) {
+              image.style.display = "block";
             } else {
-              image.style.display = 'none'
+              image.style.display = "none";
             }
-          })
+          });
         }
-      }
+      };
 
       const handleMouseOut = () => {
         images.forEach((image) => {
-          image.style.display = 'none'
-        })
+          image.style.display = "none";
+        });
         if (lastIndex) {
           const lastImage = document.querySelector<HTMLDivElement>(
-            `.imagewrap[data-index="${lastIndex}"]`,
-          )
+            `.imagewrap[data-index="${lastIndex}"]`
+          );
           if (lastImage) {
-            lastImage.style.display = 'block'
+            lastImage.style.display = "block";
           }
         }
-      }
+      };
 
-      activity.addEventListener('mouseover', handleMouseOver)
-      activity.addEventListener('mouseout', handleMouseOut)
+      activity.addEventListener("mouseover", handleMouseOver);
+      activity.addEventListener("mouseout", handleMouseOut);
 
       // Clean up event listeners
       return () => {
-        activity.removeEventListener('mouseover', handleMouseOver)
-        activity.removeEventListener('mouseout', handleMouseOut)
-      }
-    })
-  }, [lastIndex])
+        activity.removeEventListener("mouseover", handleMouseOver);
+        activity.removeEventListener("mouseout", handleMouseOut);
+      };
+    });
+  }, [lastIndex]);
 
   useEffect(() => {
-    ScrollUp()
-  }, [])
+    ScrollUp();
+  }, []);
   return (
     <>
       <Transition>
@@ -70,7 +70,7 @@ export default function Explore() {
               <div className="title">
                 <TextReveal
                   paragraphs={[
-                    'Explore',
+                    "Explore",
                     'our <span class="italic">experiences</span>',
                   ]}
                   style="heading"
@@ -174,7 +174,7 @@ export default function Explore() {
                           width={800}
                           height={500}
                           className="image"
-                          style={{ transform: 'translate(-40%, -50%) ' }}
+                          style={{ transform: "translate(-40%, -50%) " }}
                           src="/activities/balloonbig.jpg"
                           alt="\0"
                         />
@@ -205,7 +205,7 @@ export default function Explore() {
                           width={800}
                           height={500}
                           className="image"
-                          style={{ transform: 'translate(-50%, -70%) ' }}
+                          style={{ transform: "translate(-50%, -70%) " }}
                           src="/gallery/helicopter.jpg"
                           alt="\0"
                         />
@@ -373,7 +373,10 @@ export default function Explore() {
                 </div>
               </div>
               <div className="title right">
-                <TextReveal paragraphs={['And <span class="italic">more</span>...']} style="heading" />
+                <TextReveal
+                  paragraphs={['And <span class="italic">more</span>...']}
+                  style="heading"
+                />
               </div>
             </div>
           </section>
@@ -382,5 +385,5 @@ export default function Explore() {
         </main>
       </Transition>
     </>
-  )
+  );
 }

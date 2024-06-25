@@ -15,15 +15,9 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@styles/*": [
-        "./src/styles/*"
-      ],
-      "@queries/*": [
-        "./src/styles/@queries/*"
-      ],
+      "@/*": ["./src/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@queries/*": ["./src/styles/@queries/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

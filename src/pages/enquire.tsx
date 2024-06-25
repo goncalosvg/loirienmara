@@ -1,17 +1,17 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from "react";
 
-import Transition from '@/components/Transition'
-import Footer from '@/components/Footer'
-import Navigation from '@/components/Navigation'
-import ScrollUp from '@/utils/scrollUp'
-import TextReveal from '@/components/Animations/Text/TextReveal'
+import Transition from "@/components/Transition";
+import Footer from "@/components/Footer";
+import Navigation from "@/components/Navigation";
+import ScrollUp from "@/utils/scrollUp";
+import TextReveal from "@/components/Animations/Text/TextReveal";
 
 export default function Enquire() {
-  const hero = useRef(null)
+  const hero = useRef(null);
 
   useEffect(() => {
-    ScrollUp()
-  }, [])
+    ScrollUp();
+  }, []);
   return (
     <>
       <Transition>
@@ -36,5 +36,5 @@ export default function Enquire() {
         </main>
       </Transition>
     </>
-  )
+  );
 }

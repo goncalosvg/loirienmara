@@ -124,7 +124,6 @@ export default function Conserve() {
                   alt="\0"
                   priority
                 />
-
               </Marquee>
             </Fade>
           </section>

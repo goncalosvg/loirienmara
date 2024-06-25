@@ -1,3 +1,3 @@
 export default function ScrollUp() {
-  window.scrollTo(0, 0)
+  window.scrollTo(0, 0);
 }

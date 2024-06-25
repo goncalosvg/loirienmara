@@ -1,44 +1,44 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from "react";
 
-import Image from 'next/image'
+import Image from "next/image";
 
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform } from "framer-motion";
 
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-import Picture1 from '../../public/kulaal/chef.jpg'
-import Picture2 from '../../public/kulaal/interior1.jpg'
-import Picture3 from '../../public/kulaal/interior2.jpg'
-import Picture4 from '../../public/kulaal/exterior2.jpg'
-import Picture5 from '../../public/kulaal/exterior1.jpg'
+import Picture1 from "../../public/kulaal/chef.jpg";
+import Picture2 from "../../public/kulaal/interior1.jpg";
+import Picture3 from "../../public/kulaal/interior2.jpg";
+import Picture4 from "../../public/kulaal/exterior2.jpg";
+import Picture5 from "../../public/kulaal/exterior1.jpg";
 
-import TextReveal from '@/components/Animations/Text/TextReveal'
-import Transition from '@/components/Transition'
+import TextReveal from "@/components/Animations/Text/TextReveal";
+import Transition from "@/components/Transition";
 
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
-import ScrollUp from '@/utils/scrollUp'
-import Arrow from '@/components/Icons/Arrow'
-import Link from 'next/link'
-import { Carousel } from 'react-responsive-carousel'
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import ScrollUp from "@/utils/scrollUp";
+import Arrow from "@/components/Icons/Arrow";
+import Link from "next/link";
+import { Carousel } from "react-responsive-carousel";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Kulaal() {
-  const hero = useRef(null)
+  const hero = useRef(null);
 
-  const container = useRef(null)
+  const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ['start start', 'end end'],
-  })
+    offset: ["start start", "end end"],
+  });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 4.3])
-  const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4])
-  const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5])
-  const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6])
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 4.3]);
+  const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
+  const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
+  const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
 
   const pictures = [
     {
@@ -61,20 +61,20 @@ export default function Kulaal() {
       src: Picture5,
       scale,
     },
-  ]
+  ];
 
-  const horizontalContainer = useRef(null)
+  const horizontalContainer = useRef(null);
 
   const { scrollYProgress: horizontalGallery } = useScroll({
     target: horizontalContainer,
-    offset: ['start start', 'end end'],
-  })
+    offset: ["start start", "end end"],
+  });
 
-  const x = useTransform(horizontalGallery, [0, 1], ['0vw', '-300vw'])
+  const x = useTransform(horizontalGallery, [0, 1], ["0vw", "-300vw"]);
 
   useEffect(() => {
-    ScrollUp()
-  }, [])
+    ScrollUp();
+  }, []);
   return (
     <>
       <Transition>
@@ -94,7 +94,7 @@ export default function Kulaal() {
                         <Image className="picture" src={src} fill alt="\0" />
                       </div>
                     </motion.div>
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -407,7 +407,7 @@ export default function Kulaal() {
               <div className="panel last">
                 <TextReveal
                   paragraphs={[
-                    'Enjoy',
+                    "Enjoy",
                     '<span class="italic">your stay</span>',
                   ]}
                   style="end"
@@ -420,5 +420,5 @@ export default function Kulaal() {
         </main>
       </Transition>
     </>
-  )
+  );
 }

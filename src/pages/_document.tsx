@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/next-script-for-ga */
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
@@ -33,5 +33,5 @@ export default function Document() {
         ></script>
       </body>
     </Html>
-  )
+  );
 }
