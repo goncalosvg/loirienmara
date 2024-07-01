@@ -8,21 +8,20 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-import Picture1 from "../../public/naika/interior3.jpg";
+import Picture5 from "../../public/naika/exterior1.jpg";
+import Picture4 from "../../public/naika/exterior2.jpg";
 import Picture2 from "../../public/naika/gallery/interior1.jpg";
 import Picture3 from "../../public/naika/interior2.jpg";
-import Picture4 from "../../public/naika/exterior2.jpg";
-import Picture5 from "../../public/naika/exterior1.jpg";
+import Picture1 from "../../public/naika/interior3.jpg";
 
 import TextReveal from "@/components/Animations/Text/TextReveal";
 import Transition from "@/components/Transition";
 
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import ScrollUp from "@/utils/scrollUp";
 import Arrow from "@/components/Icons/Arrow";
+import Navigation from "@/components/Navigation";
+import ScrollUp from "@/utils/scrollUp";
 import Link from "next/link";
-import { Carousel } from "react-responsive-carousel";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -237,88 +236,6 @@ export default function Naika() {
                 </Link>
               </div>
             </div>
-          </section>
-          <section id="villa-carousel-gallery" className="is-mobile">
-            <Carousel
-              dynamicHeight
-              transitionTime={800}
-              showIndicators={false}
-              showArrows={false}
-              showThumbs={false}
-            >
-              <div>
-                <Image
-                  width={1200}
-                  height={1500}
-                  className="photo"
-                  src="/naika/gallery/exterior1.jpg"
-                  alt="\0"
-                />
-              </div>
-              <div>
-                <Image
-                  width={1200}
-                  height={1500}
-                  className="photo"
-                  src="/naika/gallery/exterior2.jpg"
-                  alt="\0"
-                />
-              </div>
-              <div>
-                <Image
-                  width={1200}
-                  height={1500}
-                  className="photo"
-                  src="/naika/gallery/interior1.jpg"
-                  alt="\0"
-                />
-              </div>
-              <div>
-                <Image
-                  width={1200}
-                  height={1500}
-                  className="photo"
-                  src="/naika/gallery/interior2.jpg"
-                  alt="\0"
-                />
-              </div>
-              <div>
-                <Image
-                  width={1200}
-                  height={1500}
-                  className="photo"
-                  src="/naika/gallery/food1.jpg"
-                  alt="\0"
-                />
-              </div>
-              <div>
-                <Image
-                  width={1200}
-                  height={1500}
-                  className="photo"
-                  src="/naika/gallery/food2.jpg"
-                  alt="\0"
-                />
-              </div>
-              <div>
-                <Image
-                  width={1200}
-                  height={1500}
-                  className="photo"
-                  src="/naika/gallery/room1.jpg"
-                  alt="\0"
-                />
-              </div>
-              <div>
-                <Image
-                  width={1200}
-                  height={1500}
-                  className="photo"
-                  src="/naika/gallery/room2.jpg"
-                  alt="\0"
-                />
-              </div>
-            </Carousel>
           </section>
           <section id="villa-gallery" ref={horizontalContainer}>
             <motion.div className="gallery" style={{ x }}>

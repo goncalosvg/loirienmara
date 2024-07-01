@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-import styles from './Footer.module.scss'
-import TextReveal from '../Animations/Text/TextReveal'
 import Link from 'next/link'
+import TextReveal from '../Animations/Text/TextReveal'
+import styles from './Footer.module.scss'
 
 export default function Footer() {
   return (
@@ -22,7 +22,7 @@ export default function Footer() {
             paragraphs={['Contact <span class="italic">us</span>']}
             style={styles.heading}
           />
-          <div className={`${styles.contact} link`}>contact@loiriemara.com</div>
+          <div className={`${styles.contact} link`}>reservations@loiriemara.com</div>
         </div>
         <ul className={styles.items}>
           <li className={styles.link}>Privacy Policy</li>

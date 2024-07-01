@@ -21,6 +21,7 @@
   }
   /* ABOUT */
   #about {
+    height: auto;
     padding: 5rem 0 0 0;
     overflow: hidden;
     .title {
@@ -125,6 +126,7 @@
       li {
         padding: 0.5rem 0;
         font-size: 30px;
+        justify-content: start;
         @include utils.spacing(-1px);
         .photo {
           width: 30%;
@@ -132,6 +134,10 @@
           .image {
             width: 150px;
           }
+        }
+        div {
+          order: 3;
+          margin-left: auto;
         }
         &:hover {
           gap: 0.5rem;
@@ -206,6 +212,30 @@
       font-size: 2em;
       margin: 10rem 0 0 0;
       @include utils.spacing(-2.5px);
+    }
+    .vignette {
+      display: none;
+    }
+    .mbtext {
+      width: 90%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+
+      .mbtitle {
+        color: colors.$heading;
+        font-family: utils.$main-font;
+        font-size: 50px;
+        @include utils.spacing(-3px);
+      }
+      .mbparagraph {
+        color: colors.$text;
+        font-family: utils.$main-font;
+        font-size: 18px;
+        @include utils.spacing(-0.5px);
+      }
     }
   }
   /* NURTURE */
@@ -420,7 +450,10 @@
     }
   }
   #villa-gallery {
-    display: none;
+    .end {
+      font-size: 40px;
+      @include utils.spacing(-1px);
+    }
   }
   /* GLOBALS */
   .flex {
@@ -435,6 +468,7 @@
   .plax {
     height: 70vh;
   }
+
   .mgbottom-md {
     margin-bottom: 3rem;
   }

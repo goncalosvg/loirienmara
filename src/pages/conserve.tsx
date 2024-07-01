@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 import Image from "next/image";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-import Navigation from "@/components/Navigation";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import Footer from "@/components/Footer";
-import Transition from "@/components/Transition";
 import GradientReveal from "@/components/Animations/Text/Gradient";
 import TextReveal from "@/components/Animations/Text/TextReveal";
+import Footer from "@/components/Footer";
+import Navigation from "@/components/Navigation";
+import Transition from "@/components/Transition";
 import ScrollUp from "@/utils/scrollUp";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -277,6 +277,15 @@ export default function Conserve() {
                 <Image src={`/conserve/regenerative.jpg`} alt="image" fill />
               </div>
               <div className="overlay"></div>
+              <div className="mbtext is-mobile">
+                <h3 className="mbtitle">Our<br /><span className="italic">Regenerative Farm</span></h3>
+                <p className="mbparagraph">Experience the essence of sustainable living at our
+                    regenerative farm. Engage in harvesting fresh, organic
+                    produce and relish the authentic farm-to-table dining
+                    experience. Encounter the majestic Ankole cattle and
+                    participate in daily farming activities that honor the
+                    balance of nature.</p>
+              </div>
               <div className="vignette">
                 <motion.div className="title" style={{x, y}}>
                   <TextReveal
