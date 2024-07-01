@@ -1,12 +1,48 @@
 /* eslint-disable @next/next/next-script-for-ga */
-import { Html, Head, Main, NextScript } from "next/document";
+import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <title>LOIRIEN Mara | Discover the essence of the Mara.</title>
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta httpEquiv="Content-Type" content="charset=utf-8" />
+
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon.png"
+          sizes="16x16"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+            href="/favicon.png"
+          sizes="32x32"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon.png"
+          sizes="96x96"
+        />
+
+        <link
+          rel="apple-touch-icon"
+          sizes="72x72"
+          href="/favicon.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="114x114"
+          href="/favicon.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="152x152"
+          href="/favicon.png"
+        />
 
         <script
           async
@@ -27,10 +63,6 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <script
-          defer
-          src="https://resnova.resrequest.com/widget/js/app.js"
-        ></script>
       </body>
     </Html>
   );
