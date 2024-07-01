@@ -11,14 +11,14 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
-import Navigation from "@/components/Navigation";
-import Arrow from "@/components/Icons/Arrow";
-import Footer from "@/components/Footer";
-import TextReveal from "@/components/Animations/Text/TextReveal";
 import GradientReveal from "@/components/Animations/Text/Gradient";
-import Link from "next/link";
+import TextReveal from "@/components/Animations/Text/TextReveal";
+import Footer from "@/components/Footer";
+import Arrow from "@/components/Icons/Arrow";
+import Navigation from "@/components/Navigation";
 import Transition from "@/components/Transition";
 import ScrollUp from "@/utils/scrollUp";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -664,10 +664,7 @@ export default function Home() {
                   style="heading"
                 />
               </div>
-              <rr-resnova
-                widget-id="9bedce47-df65-43b1-b73d-3240436b35f8"
-                api-url="https://resnova.resrequest.com/api/"
-              />
+              <div className="enquire">To inquire about availability or to learn more about our bespoke experiences, please contact our team at <a className="link" href="mailto:reservations@loirienmara.com">reservations@loirienmara.com</a>, or via WhatsApp or phone at <span className="link">+254 (0) 798 371 180</span>. We look forward to welcoming you home to LOIRIEN Mara.</div>
             </div>
           </section>
           <section className="plax"></section>

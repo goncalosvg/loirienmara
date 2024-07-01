@@ -467,17 +467,12 @@
       @include utils.spacing(-9px);
       @include utils.lineHeight(100%);
     }
-    .paragraph {
-      width: 40%;
-
-      p {
-        color: colors.$light-text;
-        font-family: utils.$main-font;
-        font-size: 19px;
-        margin: 0 0 2rem 0;
-        text-align: right;
-        @include utils.spacing(-0.5px);
-      }
-    }
+  }
+  .enquire {
+    color: colors.$light-text;
+    font-family: utils.$main-font;
+    font-size: 22px;
+    @include utils.spacing(-0.3px);
+    @include utils.lineHeight(160%);
   }
 }

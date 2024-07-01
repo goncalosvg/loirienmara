@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
 
-import Transition from "@/components/Transition";
+import TextReveal from "@/components/Animations/Text/TextReveal";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
+import Transition from "@/components/Transition";
 import ScrollUp from "@/utils/scrollUp";
-import TextReveal from "@/components/Animations/Text/TextReveal";
 
 export default function Enquire() {
   const hero = useRef(null);
@@ -25,10 +25,7 @@ export default function Enquire() {
                   style="heading"
                 />
               </div>
-              <rr-resnova
-                widget-id="9bedce47-df65-43b1-b73d-3240436b35f8"
-                api-url="https://resnova.resrequest.com/api/"
-              />
+              <div className="enquire">To inquire about availability or to learn more about our bespoke experiences, please contact our team at <a className="link" href="mailto:reservations@loirienmara.com">reservations@loirienmara.com</a>, or via WhatsApp or phone at <span className="link">+254 (0) 798 371 180</span>. We look forward to welcoming you home to LOIRIEN Mara.</div>
             </div>
           </section>
           <section className="plax"></section>
