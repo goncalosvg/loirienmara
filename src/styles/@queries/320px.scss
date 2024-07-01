@@ -450,10 +450,7 @@
     }
   }
   #villa-gallery {
-    .end {
-      font-size: 40px;
-      @include utils.spacing(-1px);
-    }
+    display: none;
   }
   /* GLOBALS */
   .flex {
